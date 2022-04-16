@@ -1,11 +1,17 @@
-
+import {Routers} from './containers'
+import {BrowserRouter} from 'react-router-dom'
+import { Footer, Header } from './components';
+import  './assets/boxicons-2.0.7/css/boxicons.min.css'
+import 'swiper/css'
 
 function App() {
   
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <BrowserRouter>
+      <Header/>
+       <Routers/>
+   
+    </BrowserRouter>
   );
 }
 

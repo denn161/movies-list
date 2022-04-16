@@ -4,6 +4,11 @@
     justify-content: $justify-content;
 }
 
+@mixin center($aligin-item) {
+    display: flex;
+    align-items: $aligin-item;
+   
+}
 
 @mixin column($flex-derection,$aligin-item) {
     display: flex;

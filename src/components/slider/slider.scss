@@ -1,0 +1,153 @@
+
+@use '../../scss/' as*;
+
+
+.hero__slide{
+  margin-bottom: 3rem;
+
+ 
+
+  &-item{
+      padding: 9rem 0;
+      width: 100%;
+      position: relative;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+
+      &::before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+         @include overlay();
+          opacity: 1;
+          transition: opacity .4s ease;
+
+      }
+
+      &::after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100px;
+          background-image: linear-gradient(to top,$body-bg,rgba($black,0));
+      }
+
+    //   &:hover::before{
+    //       opacity: 1;
+    //   }
+
+      &.active .hero__slide-title{
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      &.active .hero__slide-title{
+          transition-delay: 0.3s,0.3s;
+      }
+
+      &.active .hero__slide-btns{
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.9s,0.9s ;
+      }
+
+      &.active .hero__slide-overview{
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.6s,0.6s ;
+    }
+
+    &.active .hero__slide-poster{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+     
+  }
+
+  &-title{
+      font-size: 5rem;
+      font-weight: bold;
+      line-height: 1;
+      @include tablet{
+          font-size: 4rem;
+      }
+
+  }
+
+  &-overview{
+    font-size: 20px;
+    color: $white;
+    font-weight: bold;
+    @include tablet{
+        font-size: 16px;
+    }
+  }
+
+  &-content{
+      @include flex(center,center);
+      position:relative;
+
+  }
+  &-info{
+    flex: 0 1 55%;
+    @include column(column,flex-start);
+    gap: 40px;
+    padding:0 3rem;
+    @include tablet{
+        flex: 0 1 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }  
+
+
+  }
+
+  &-btns{
+      @include flex(center,unset);
+      gap: 30px;      
+
+  }
+
+  &-poster{
+      max-width: 500px;
+      width: 100%;
+      flex: 1;
+      @include flex(center,flex-start);
+      border-radius:$border-radius;
+      box-shadow: $box-shadow;
+      position: relative;
+      transform: scale(0);
+      transition: transform .7s ease;
+      @include tablet{
+         display: none;
+     }
+
+     img{
+         border-radius: $border-radius;
+       
+     }
+  }
+
+  &-title, &-overview,&-btns{
+      opacity: 0;
+      transform: translateY(-100px);
+      transition: opacity .5s ease,transform .5s ease;    
+  }
+
+ 
+
+
+  
+ 
+
+}
