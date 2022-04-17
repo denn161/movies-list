@@ -6,9 +6,9 @@ function Routers() {
   return (    
      <Routes>
      <Route path='/' element={<HomePage/>}/>
-     <Route path='/:ctegory/:id' element={<Details/>}/>
+     <Route path='/:category/:id' element={<Details/>}/>
      <Route path='/:category/search/:keyword' element={<Catalog/>}/>
-     <Route path='/:ctegory' element={<Catalog/>}/>
+     <Route path='/:category' element={<Catalog/>}/>
      </Routes>    
      
    

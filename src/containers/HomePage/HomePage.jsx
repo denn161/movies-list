@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 // import { Button} from '../../components'
-import { Footer, MovieList } from '../../components'
+import { MovieList } from '../../components'
 import { OutlineButton } from '../../components/button/Button'
 import {HeroSlide} from '../../components'
 import {category,movieType,tvType} from '../../api/moviesTmBdApi'
@@ -54,7 +54,6 @@ function HomePage() {
       <Section title={title} category={category} type={type}/>
    )}
  </div>
-  <Footer/>
    </>
   )
 }

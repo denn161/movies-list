@@ -1,15 +1,32 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+
+import { PageHeader } from '../../components'
+import { category } from '../../api/moviesTmBdApi'
+import { MovieGrid } from '../../components'
 import './catalog.scss'
 
 function Catalog() {
 
- const {category}=useParams()
+ const params=useParams()
 
- console.log(category)
+ console.log(params)
 
+  const title = params.category===category.movie?'Movies':'TV Series'
+  
+  
   return (
-    <div>Catalog</div>
+    <>
+    <PageHeader>
+      {title}
+    </PageHeader>
+      <div className="container">        
+       <MovieGrid category={params.category}/>
+      </div>
+    </>
+    
+
+  
   )
 }
 

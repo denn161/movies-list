@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Header/>
        <Routers/>
-   
+       <Footer/>
     </BrowserRouter>
   );
 }
