@@ -78,9 +78,9 @@ const HeroSlideItem =({item,className})=>{
   const modal = document.querySelector(`#modal_${item?.id}`)
        
   const {data} = await tmbdApi.getVideos(category.movie,item?.id)
-   console.log(data.results[0].key)
+  
 
-      if(data.results?.length){
+      if(data?.results?.length){
 
       const videoSrc = `https://www.youtube.com/embed/${data?.results[0].key}`
       
@@ -130,11 +130,7 @@ const TrailerModal = ({item})=>{
              <iframe ref={iframeRef} width='100%' height={'500px'} title='trailer'></iframe>
              </ModalContent>  
         </Modal>
-    )
-
- 
-
- 
+    ) 
 
 }
 

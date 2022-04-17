@@ -1,0 +1,63 @@
+
+@use '../../scss/' as*;
+
+.footer{
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 100%;
+   position: relative;
+   padding: 6rem 2rem;
+
+   &__logo{
+       max-width: 61px;
+        
+   }
+
+   &__item{
+
+    &-logo{
+        width: 100%;
+        @include flex(center, center);
+        margin-bottom: 3rem;
+        gap: 30px;
+    } 
+    
+    &-menu{
+        @include flex(center,space-around)
+    //   display: grid;
+    //   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    //   justify-items: center;
+    }
+
+    &-list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+
+    }
+
+    
+   }
+
+ &__list-item{
+     padding: 0.5rem 1rem;
+ }
+ &__list-link{
+     font-size: 1.5rem;
+     font-weight: 600;
+     transition: color .4s ease;
+
+     &:hover{
+         color: $main-color;
+     }
+
+ }
+
+    
+   .copy{
+       width: 100%;
+       @include flex(center,center);
+       }
+}

@@ -17,6 +17,13 @@
    
 }
 
+@mixin image($background-repeat,$background-position,$size){
+    background-repeat: $background-repeat;
+    background-position: $background-position;
+    background-size: $size;
+     
+}
+
 @mixin overlay {
     background-color: rgba($color: #000000, $alpha: 0.6);
 }
