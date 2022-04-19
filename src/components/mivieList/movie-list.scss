@@ -15,14 +15,12 @@
             width: 40% !important;
         }
     }
-
-
-   
+  
  }
 
  &__item{
     position: relative;
-    background-position:center center;
+    background-position:center left;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: $border-radius;

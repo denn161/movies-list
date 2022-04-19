@@ -1,0 +1,125 @@
+@use '../../scss/' as*;
+
+
+
+.details{
+
+    &__banner{
+        height: 50vh;
+        position: relative;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+           @include overlay();
+            opacity: 1;
+            transition: opacity .4s ease;
+    
+        }
+    
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-image: linear-gradient(to top,$body-bg,rgba($black,0));
+        }
+     
+    }
+
+    &__content{
+        position: relative;
+        padding: 0 2rem;
+        margin-top: -200px;
+        display: flex;
+        gap: 30px;
+
+      
+
+
+        &-poster{
+            flex: 0 1 30%;
+
+            @include mobile{
+                display: none;
+            }
+        }
+        
+        &-img{
+            background-position:  left;
+            background-size: cover;
+            background-repeat: no-repeat; 
+            border-radius: $border-radius;
+            padding-top: 165%;
+        }
+
+
+        &-info{
+           flex: 0 1 70%;
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+           
+
+           @include mobile{
+               flex: 0 1 100%;
+           }
+
+        }
+
+        &-title{
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 170%;
+            margin-bottom: 1rem;
+
+        }
+
+        &-date{
+            color: $main-color;
+            font-size: 26px;
+        }
+        &-release{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        &-genres{
+            display: flex;
+            align-items: center;
+            gap: 20px; 
+            margin-bottom: 2rem;        
+        }
+
+        &-genre{
+            padding: 0.5rem 1.5rem;
+            border: 2px solid $white;
+            border-radius: $border-radius;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: $body-bg;
+        }
+
+        &-text{
+            font-size: 1.5rem;
+            line-height: 1;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+
+        }
+        
+    }
+}

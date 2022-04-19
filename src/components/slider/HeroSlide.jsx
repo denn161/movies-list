@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {Button} from '../'
 import { OutlineButton } from '../button/Button';
 
-import tmbdApi,{movieType,tvType,category} from '../../api/moviesTmBdApi'
+import tmbdApi,{movieType,category} from '../../api/moviesTmBdApi'
 
 import apiConfig from '../../api/apiConfig'
 import './slider.scss'
@@ -45,11 +45,11 @@ const [movieItems, setMovieItems] = useState([])
      <div className="hero__slide">
           <Swiper  grabCursor={true} spaceBetween={5} slidesPerView={1}>
             {movieItems?.map((item)=>{
-               if(item?.overview||item?.poster_path){
+               if(item?.overview&&item?.poster_path&&item?.backdrop_path){
                  return  <SwiperSlide key={item?.id}>
                 {({isActive})=>(
                 
-                    <HeroSlideItem item={item} className={isActive?'active':''}/>
+                  <HeroSlideItem item={item} className={isActive?'active':''}/>
                   
                 )}
             </SwiperSlide>

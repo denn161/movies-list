@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-
 import { PageHeader } from '../../components'
 import { category } from '../../api/moviesTmBdApi'
 import { MovieGrid } from '../../components'
@@ -20,7 +19,7 @@ function Catalog() {
     <PageHeader>
       {title}
     </PageHeader>
-      <div className="container">        
+      <div className="container mb-3 section__catalog">        
        <MovieGrid category={params.category}/>
       </div>
     </>

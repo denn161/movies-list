@@ -26,14 +26,14 @@ button{
     }
 
     &.small{
-        border: 2px solid transparent;
+        border: 2px solid $white;
         padding: .25rem 1.5rem;
         font-size: 1rem;
     }
 }
 
 .btn-outline{
-    border: 3px solid $white;
+    border: 3px solid #fff;
     color: $white;
     background-color: transparent;
     box-shadow: unset;
