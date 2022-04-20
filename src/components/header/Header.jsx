@@ -57,7 +57,7 @@ function Header() {
         <div className="header__inner">
         <div className="header__logo">
             <img className='header__logo-img' src={logo} alt="logo" /> 
-            <Link className='header__logo-text hover' to={'/'}>MiviesList</Link> 
+            <Link className='header__logo-text hover' to={'/'}>MoviesList</Link> 
         </div>
          <nav className='header__nav'>
            <ul className="header__nav-list">
