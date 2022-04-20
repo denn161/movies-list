@@ -7,12 +7,9 @@ import tmbdApi,{category}  from '../../api/moviesTmBdApi'
 import './movie-list.scss'
 
 
-function MovieList(props) {
+function MovieList(props) {  
 
-  
-
-    const [items,setItems]=useState([])   
-     
+const [items,setItems]=useState([])     
     
 
     const getMovieList =useCallback(async()=>{
@@ -31,7 +28,7 @@ function MovieList(props) {
                     response = await tmbdApi.gettvList(props.type,{params})
             } 
          }else{
-             response=await tmbdApi.similarMovies(props.category,props.id)
+             response=await tmbdApi.similarMovies(props.category,props.id,{params})
          }
 
           console.log(response.data.results)
@@ -58,18 +55,12 @@ function MovieList(props) {
     return  <SwiperSlide key={item?.id}>
           <MovieItem item={item} category={props.category}/>
       </SwiperSlide>
-
-
       })}
-
   </Swiper>
 
     </div>
   )
 }
-
-
-
 
 
 MovieList.propTypes = {

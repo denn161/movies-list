@@ -74,6 +74,7 @@
 
            @include mobile{
                flex: 0 1 100%;
+               align-items: center;
            }
 
         }
@@ -122,4 +123,7 @@
         }
         
     }
+
+    
 }
+

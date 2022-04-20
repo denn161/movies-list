@@ -1,10 +1,11 @@
 import React,{useState,useEffect,useCallback} from 'react'
 import {useParams} from 'react-router-dom'
-import {Loader} from '../../components'
+import {Loader, VideoList} from '../../components'
 import apiConfig from '../../api/apiConfig'
+import { CastList,MovieList } from '../../components'
 import tmbdApi,{category as cate} from '../../api/moviesTmBdApi'
-
 import './details.scss'
+
 
 
 function Details() {
@@ -56,7 +57,7 @@ function Details() {
           <>
             <div className=" details__banner mb-3" style={{backgroundImage:`url(${bg}`}}></div>
              <div className="container mb-3">
-                    <div className="details__content">
+                    <div className="details__content mb-3">
                        <div className="details__content-poster">
                            <div className="details__content-img"
                             style={{backgroundImage:`url(${poster})`}}>                             
@@ -64,7 +65,7 @@ function Details() {
 
                        </div>
                        <div className="details__content-info">
-                         <div className='details__content-title'>{item?.title||item?.name}</div>
+                         <h1 className='details__content-title'>{item?.title||item?.name}</h1>
                          <div className='details__content-release'>
                            <span className='details__content-date'>Date release:</span>
                            <span style={{fontSize:'20px'}}>{item?.release_date}</span> </div>
@@ -76,13 +77,21 @@ function Details() {
                          <p className='details__content-text'>{item?.overview}</p>
                          <div className="cast">
                            <div className="section__header">
-                             <h2>Cast</h2>
+                             <h2 className='cast__title mb-3'>Актесркий состав</h2>
                            </div>
+                           <CastList id={id} />
                            
                          </div>
                          
                        </div>
                     </div>
+                    <VideoList id={id}/>
+                    <div className="section mb-3">
+                      <div className="section__header mb-2">
+                        <h2>Похожие видео</h2>
+                      </div>
+                    </div>
+                 <MovieList category={category} id={item?.id} type={'similar'}  />
              </div>
           </>
       )}

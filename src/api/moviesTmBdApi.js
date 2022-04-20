@@ -68,7 +68,7 @@ const tmbdApi = {
 
         const url = `${category[cate]}/${id}/similar`
 
-        return axiosClient.get(url,{params:{}})
+        return axiosClient.get(url,{params:{language:'ru'}})
     }
 }
 

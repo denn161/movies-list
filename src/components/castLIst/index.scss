@@ -1,0 +1,29 @@
+@use '../../scss/' as*;
+
+.cast{
+      width: 100%;
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        grid-gap: 30px;
+        width: 100%;
+    }
+
+    &__item{
+        border-radius: $border-radius;
+        text-align: center;
+       &-img{
+           border-radius: $border-radius;
+           img{
+               border-radius: $border-radius;
+           }          
+       }
+
+       &-name{
+           font-size: 1rem;
+           font-weight: 700;
+           margin-top: 20px;
+       }
+
+    }
+}
